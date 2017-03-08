@@ -49,9 +49,14 @@ cygwin\bin\rm.exe /curdrive
 cygwin\bin\ln.exe -s %WD% /curdrive
 :: This makes a symlink from “/curdrive” to our current drive letter. That way you can always “cd /curdrive” to get to your current drive letter. Otherwise, you will find yourself hunting for the drive letter in “/cygdrive/{drive_letter}/”.
 
-...
+:: Actually run the bash instance.
+cygwin\bin\bash --login -ijh
+:: This of course actually runs Cygwin. You will now be logged in as your specified user, and should end up in a home directory with the same username you specified in this .bat file, instead of your Windows user name.
+:: The bat file will halt at this point until you exit the Cygwin session. We need to add this final but to the end of the .bat file to do some cleanup. It will execute after you exit the Cygwin session.
 
-
-
-
-jh
+:: Cleanup and replace pre-existing mounts.
+cygwin\bin\rm.exe /curdrive
+cygwin\bin\umount -U
+cygwin\bin\bash cygwin\tmp\mount.log
+cygwin\bin\rm cygwin\tmp\mount.log
+:: We remove our symlink to “/curdrive” since it will be remapped, potentially to a different drive letter, on the next run anyway.
