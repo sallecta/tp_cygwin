@@ -1,3 +1,12 @@
+
+
+
+
+:: Based on rally25rs' "Making a truly portable Cygwin install, working around drive letter and file permission issues" article at codingwithspike.wordpress.com
+:: https://codingwithspike.wordpress.com/2012/08/02/making-a-truly-portable-cygwin-install-working-around-drive-letter-and-file-permission-issues/amp/
+
+
+
 :: Place this file on your portable / USB drive
 
 @echo off
