@@ -6,5 +6,5 @@ https://codingwithspike.wordpress.com/2012/08/02/making-a-truly-portable-cygwin-
 
 
 
-See initial branch to get same code as in article above
+See initial branch to get same code as in original article.
 https://github.com/sallecta/tp_cygwin/tree/initial
